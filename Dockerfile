@@ -30,6 +30,7 @@ RUN \
     libatomic1 \
     nano \
     net-tools \
+    Rclone \
     sudo && \
   echo "**** install code-server ****" && \
   if [ -z ${CODE_RELEASE+x} ]; then \
