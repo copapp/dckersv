@@ -45,7 +45,16 @@ RUN \
   if [ "${CODE_RELEASE}" = "4.0.2" ] && [ "$(uname -m)" !=  "x86_64" ]; then \
     cd /app/code-server && \
     npm i --production @node-rs/argon2; 
-  
+  echo "**** clean up ****" && \
+  apt-get purge --auto-remove -y \
+    nodejs && \
+  apt-get clean && \
+  rm -rf \
+    /config/* \
+    /tmp/* \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
+    /etc/apt/sources.list.d/nodesource.list
 
 # add local files
 COPY /root /
