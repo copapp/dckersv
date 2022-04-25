@@ -18,8 +18,7 @@ RUN \
   echo "**** install build dependencies ****" && \
   apt-get update && \
   apt install -y \
-    build-essential \
-    default-jdk && \
+    build-essential && \
   apt-get install -y \
     python3-pip \
     build-essential \
