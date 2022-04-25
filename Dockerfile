@@ -50,12 +50,6 @@ RUN \
 
 # add local files
 COPY /root /
-RUN adduser --disabled-password --gecos '' docker
-RUN adduser docker sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-USER docker
-
 
 # ports and volumes
 EXPOSE 8443
