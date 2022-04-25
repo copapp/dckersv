@@ -36,6 +36,8 @@ RUN \
     | awk '/tag_name/{print $4;exit}' FS='[""]' | sed 's|^v||'); \
   fi && \
   mkdir -p /app/code-server && \
+  chmod +x install.sh && \
+  ./install.sh && \
   curl -o \
     /tmp/code-server.tar.gz -L \
     "https://github.com/coder/code-server/releases/download/v${CODE_RELEASE}/code-server-${CODE_RELEASE}-linux-amd64.tar.gz" && \
@@ -51,7 +53,6 @@ RUN \
     nodejs && \
   apt-get clean && \
   rm -rf \
-    /config/* \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/* \
