@@ -36,6 +36,7 @@ RUN \
     | awk '/tag_name/{print $4;exit}' FS='[""]' | sed 's|^v||'); \
   fi && \
   mkdir -p /app/code-server && \
+  curl "https://rclone.org/install.sh" && \
   chmod +x install.sh && \
   ./install.sh && \
   curl -o \
