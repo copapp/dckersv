@@ -44,7 +44,8 @@ RUN \
   echo "**** patch 4.0.2 ****" && \
   if [ "${CODE_RELEASE}" = "4.0.2" ] && [ "$(uname -m)" !=  "x86_64" ]; then \
     cd /app/code-server && \
-    npm i --production @node-rs/argon2; 
+    npm i --production @node-rs/argon2; \
+  fi && \
   echo "**** clean up ****" && \
   apt-get purge --auto-remove -y \
     nodejs && \
