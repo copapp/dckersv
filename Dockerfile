@@ -44,8 +44,7 @@ RUN \
   echo "**** patch 4.0.2 ****" && \
   if [ "${CODE_RELEASE}" = "4.0.2" ] && [ "$(uname -m)" !=  "x86_64" ]; then \
     cd /app/code-server && \
-    npm i --production @node-rs/argon2; \
-  fi && \
+    npm i --production @node-rs/argon2; 
   
 
 # add local files
