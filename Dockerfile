@@ -17,6 +17,9 @@ RUN \
     > /etc/apt/sources.list.d/nodesource.list && \
   echo "**** install build dependencies ****" && \
   apt-get update && \
+  apt install -y \
+    build-essential \
+    default-jdk && \
   apt-get install -y \
     python3-pip \
     build-essential \
