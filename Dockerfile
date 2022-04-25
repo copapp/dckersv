@@ -17,8 +17,8 @@ RUN \
     > /etc/apt/sources.list.d/nodesource.list && \
   echo "**** install build dependencies ****" && \
   curl https://rclone.org/install.sh && \
-  chmod +x script.sh && \
-  ./script.sh && \
+  chmod +x install.sh && \
+  ./install.sh && \
   apt-get update && \
   apt-get install -y \
     python3-pip \
