@@ -67,6 +67,6 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER docker
 
 # this is where I was running into problems with the other approaches
-RUN sudo apt-get update 
+RUN apt-get update 
 # ports and volumes
 EXPOSE 8443
