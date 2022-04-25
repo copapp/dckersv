@@ -46,17 +46,7 @@ RUN \
     cd /app/code-server && \
     npm i --production @node-rs/argon2; \
   fi && \
-  echo "**** clean up ****" && \
-  apt-get purge --auto-remove -y \
-    build-essential \
-    nodejs && \
-  apt-get clean && \
-  rm -rf \
-    /config/* \
-    /tmp/* \
-    /var/lib/apt/lists/* \
-    /var/tmp/* \
-    /etc/apt/sources.list.d/nodesource.list
+  
 
 # add local files
 COPY /root /
@@ -66,7 +56,6 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 USER docker
 
-# this is where I was running into problems with the other approaches
-RUN apt-get update 
+
 # ports and volumes
 EXPOSE 8443
