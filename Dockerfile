@@ -23,6 +23,7 @@ RUN \
     nodejs && \
   echo "**** install runtime dependencies ****" && \
   apt-get install -y \
+    ffmpeg \
     golang-go \
     python3 \
     git \
